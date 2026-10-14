@@ -8,7 +8,7 @@
   ],
   "durable_objects": { "bindings": [{ "name": "BOT", "class_name": "BotContainer" }] },
   "migrations": [{ "tag": "v1", "new_sqlite_classes": ["BotContainer"] }],
-  "d1_databases": [{ "binding": "DB", "database_name": "discord-host", "database_id": "REPLACE_ME" }],
+  "d1_databases": [{ "binding": "DB", "database_name": "discord-host", "database_id": "5e1411a0-2c00-4231-979c-f275e7675edd" }],
   "triggers": { "crons": ["*/5 * * * *"] },
   "vars": { "MAX_BOTS_PER_USER": "2" }
 }
