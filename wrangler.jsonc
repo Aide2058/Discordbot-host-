@@ -1,0 +1,14 @@
+{
+  "name": "discord-host",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-06-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "containers": [
+    { "class_name": "BotContainer", "image": "./Dockerfile", "max_instances": 50, "instance_type": "lite" }
+  ],
+  "durable_objects": { "bindings": [{ "name": "BOT", "class_name": "BotContainer" }] },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["BotContainer"] }],
+  "d1_databases": [{ "binding": "DB", "database_name": "discord-host", "database_id": "REPLACE_ME" }],
+  "triggers": { "crons": ["*/5 * * * *"] },
+  "vars": { "MAX_BOTS_PER_USER": "2" }
+}

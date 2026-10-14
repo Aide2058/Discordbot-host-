@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, key_hash TEXT UNIQUE NOT NULL, created_at INTEGER);
+CREATE TABLE IF NOT EXISTS bots (
+  id TEXT PRIMARY KEY, user_id TEXT NOT NULL, name TEXT NOT NULL,
+  token TEXT NOT NULL, code TEXT NOT NULL, desired TEXT DEFAULT 'stopped', created_at INTEGER
+);
+CREATE INDEX IF NOT EXISTS bots_user ON bots(user_id);
